@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="176dp"
+    android:background="@color/colorAccent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    <!--background escolhe a cor/imagem do backgroung
+        gravity faz com que o texto e tudo o resto seja colocado abaixo do header
+        theme escolhe o tema na action bar, neste caso faz as letras brancas
+        -->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="Teste1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    <!--textAppearance define o tamanho do texto para o tamanha pre-definido em Body1-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dummy Text" />
+
+</LinearLayout>
