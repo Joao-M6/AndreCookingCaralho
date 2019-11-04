@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="176dp"
+    android:id="@+id/nav_header"
     android:background="@color/colorAccent"
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
+    android:layout_height="150dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
     <!--background escolhe a cor/imagem do backgroung
         gravity faz com que o texto e tudo o resto seja colocado abaixo do header

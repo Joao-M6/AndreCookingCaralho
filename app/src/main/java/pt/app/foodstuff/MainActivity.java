@@ -3,7 +3,7 @@ package pt.app.foodstuff;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -13,6 +13,17 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+
+import pt.app.foodstuff.Fragments.FavoritesFragment;
+import pt.app.foodstuff.Fragments.FridgeFragment;
+import pt.app.foodstuff.Fragments.HelpFragment;
+import pt.app.foodstuff.Fragments.HomeFragment;
+import pt.app.foodstuff.Fragments.MealPlanningFragment;
+import pt.app.foodstuff.Fragments.ProfileFragment;
+import pt.app.foodstuff.Fragments.RecipeFragment;
+import pt.app.foodstuff.Fragments.SettingsFragment;
+import pt.app.foodstuff.Fragments.ShoppingListFragment;
+import pt.app.foodstuff.Fragments.SugestionsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -28,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        final NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         //Passamos drawer e toolbar porque são as duas views que queremos conectadas e sincronizadas
@@ -37,12 +48,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        final View headerview=navigationView.getHeaderView(0);
+        View txtview_edit = headerview.findViewById(R.id.nav_header);
+
+        txtview_edit.setOnClickListener(new View.OnClickListener() {
+            @Override    public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ProfileFragment()).commit();
+
+                navigationView.setCheckedItem(R.id.nav_profile);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
         //Ao iniciar a aplicacao queremos ter a pagina inicial a comecar
         //Impede que a app volta a pagina inicial se houver algum conflito
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new MessageFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_message);
+                    new RecipeFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_home);
         }
     }
 
@@ -56,26 +80,55 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case R.id.nav_message:
+            case R.id.nav_home:
                 //Abrir o fragment
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MessageFragment()).commit();
+                        new HomeFragment()).commit();
                 break;
-            case R.id.nav_chat:
+            case R.id.nav_recipes:
                 //Abrir o fragment
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ChatFragment()).commit();
+                        new RecipeFragment()).commit();
+                break;
+            case R.id.nav_fridge:
+                //Abrir o fragment
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new FridgeFragment()).commit();
+                break;
+            case R.id.nav_shopping_list:
+                //Abrir o fragment
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ShoppingListFragment()).commit();
+                break;
+            case R.id.nav_meal_planning:
+                //Abrir o fragment
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new MealPlanningFragment()).commit();
+                break;
+            case R.id.nav_favorites:
+                //Abrir o fragment
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new FavoritesFragment()).commit();
+                break;
+            case R.id.nav_sugestions:
+                //Abrir o fragment
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SugestionsFragment()).commit();
                 break;
             case R.id.nav_profile:
                 //Abrir o fragment
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();
                 break;
-            case R.id.nav_share:
-                Toast.makeText(this, "share", Toast.LENGTH_SHORT).show();
+            case R.id.nav_help:
+                //Abrir o fragment
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new HelpFragment()).commit();
                 break;
-            case R.id.nav_send:
-                Toast.makeText(this, "send", Toast.LENGTH_SHORT).show();
+            case R.id.nav_settings:
+                //Abrir o fragment
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SettingsFragment()).commit();
                 break;
         }
 
