@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Impede que a app volta a pagina inicial se houver algum conflito
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new RecipeFragment()).commit();
+                    new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
     }

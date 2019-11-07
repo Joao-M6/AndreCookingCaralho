@@ -16,7 +16,38 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        final View.OnClickListener hListener = new View.OnClickListener() {
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.button_home_cooking:
+                        getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new FridgeFragment()).commit();
+                        break;
+                    case R.id.button_home_shopping_list:
+                        getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new ShoppingListFragment()).commit();
+                        break;
+                    case R.id.button_home_meal_planning:
+                        getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new MealPlanningFragment()).commit();
+                        break;
+                    case R.id.button_home_sugestions:
+                        getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new SugestionsFragment()).commit();
+                        break;
+                }
+            }
+
+        };
+
+        view.findViewById(R.id.button_home_cooking).setOnClickListener(hListener);
+        view.findViewById(R.id.button_home_shopping_list).setOnClickListener(hListener);
+        view.findViewById(R.id.button_home_meal_planning).setOnClickListener(hListener);
+        view.findViewById(R.id.button_home_sugestions).setOnClickListener(hListener);
+
+        return view;
     }
 
 }
