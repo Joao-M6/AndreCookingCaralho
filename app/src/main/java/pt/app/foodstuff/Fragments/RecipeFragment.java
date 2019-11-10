@@ -17,5 +17,8 @@ public class RecipeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_recipes, container, false);
+
+        // RecyclerView with two collumns
+        // recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     }
 }
