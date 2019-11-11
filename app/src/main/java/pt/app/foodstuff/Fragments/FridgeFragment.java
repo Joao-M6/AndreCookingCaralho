@@ -16,6 +16,21 @@ public class FridgeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_fridge, container, false);
+        View view = inflater.inflate(R.layout.fragment_fridge, container, false);
+
+        final View.OnClickListener mListener = new View.OnClickListener() {
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.button_fridge_options_temp:
+                        getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new RecipeOptionsFragment()).commit();
+                        break;
+                }
+            }
+        };
+
+        view.findViewById(R.id.button_fridge_options_temp).setOnClickListener(mListener);
+
+        return view;
     }
 }

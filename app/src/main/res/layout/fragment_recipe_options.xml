@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.RecipeOptionsFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="5">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -117,13 +118,100 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="30dp"
         android:layout_weight="1">
 
+        <TextView
+            android:id="@+id/recipe_options_textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Don't Use"
+            android:textColor="#000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/recipe_options_button1"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/icon_details"
+            app:layout_constraintStart_toEndOf="@+id/recipe_options_textview2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recipe_options_textview3"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginStart="32dp"
+            android:gravity="center"
+            android:text="Ingredients"
+            android:textColor="#000"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_options_textview2" />
+
+        <Button
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="7dp"
+            android:drawableStart="@drawable/icon_details"
+            app:layout_constraintStart_toEndOf="@+id/recipe_options_textview3"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_options_button1" />
+
+        <Button
+            android:id="@+id/recipe_options_button2"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginEnd="32dp"
+            android:drawableStart="@drawable/icon_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_options_textClock" />
+
+        <TextView
+            android:id="@+id/recipe_options_textview4"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="48dp"
+            android:gravity="center"
+            android:text="Time"
+            android:textColor="#000"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/recipe_options_textClock"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recipe_options_textClock"
+            android:layout_width="60dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="Click to set time"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recipe_options_textview6"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginEnd="28dp"
+            android:gravity="center"
+            android:text="Nutrition"
+            android:textColor="#000"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/recipe_options_button2"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_options_textview4" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
