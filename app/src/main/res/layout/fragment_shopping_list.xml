@@ -30,18 +30,21 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <Button
+                    android:id="@+id/button_shopping_list_ingredient"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="Ingredient+" />
 
                 <Button
+                    android:id="@+id/button_shopping_list_recipe"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="Recipes+" />
 
                 <Button
+                    android:id="@+id/button_shopping_list_calendar"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -63,6 +66,7 @@
                 app:layout_constraintTop_toBottomOf="@id/lists_buttons_layout" />
 
             <Button
+                android:id="@+id/button_shopping_list_add_item"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:drawableStart="@drawable/icon_add"
@@ -95,7 +99,7 @@
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/checkBox_shopping_list_fridge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
@@ -113,7 +117,7 @@
                     android:textColor="#000"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox"
+                    app:layout_constraintStart_toEndOf="@+id/checkBox_shopping_list_fridge"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

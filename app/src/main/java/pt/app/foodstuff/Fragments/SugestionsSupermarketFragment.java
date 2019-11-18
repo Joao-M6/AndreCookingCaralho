@@ -16,6 +16,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -45,6 +47,7 @@ public class SugestionsSupermarketFragment extends Fragment implements
     Marker mCurrLocationMarker;
     GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
+    CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6;
 
     @Nullable
     @Override
@@ -59,6 +62,44 @@ public class SugestionsSupermarketFragment extends Fragment implements
             ft.replace(R.id.sugestions_supermarket_mapView, mapFragment).commit();
         }
         mapFragment.getMapAsync(this);
+
+        checkBox1 = (CheckBox) view.findViewById(R.id.supermarket_checkbox1);
+        checkBox2 = (CheckBox) view.findViewById(R.id.supermarket_checkbox2);
+        checkBox3 = (CheckBox) view.findViewById(R.id.supermarket_checkbox3);
+        checkBox4 = (CheckBox) view.findViewById(R.id.supermarket_checkbox4);
+        checkBox5 = (CheckBox) view.findViewById(R.id.supermarket_checkbox5);
+        checkBox6 = (CheckBox) view.findViewById(R.id.supermarket_checkbox6);
+
+        final View.OnClickListener hListener = new View.OnClickListener() {
+            public void onClick(View view) {
+                if (checkBox1.isChecked()) {
+                    Toast.makeText(getActivity(), "Marca no mapa so o supermercado 1", Toast.LENGTH_LONG).show();
+                }
+                if (checkBox2.isChecked()) {
+                    Toast.makeText(getActivity(), "Marca no mapa so o supermercado 2", Toast.LENGTH_LONG).show();
+                }
+                if (checkBox3.isChecked()) {
+                    Toast.makeText(getActivity(), "Marca no mapa so o supermercado 3", Toast.LENGTH_LONG).show();
+                }
+                if (checkBox4.isChecked()) {
+                    Toast.makeText(getActivity(), "Marca no mapa so o supermercado 4", Toast.LENGTH_LONG).show();
+                }
+                if (checkBox5.isChecked()) {
+                    Toast.makeText(getActivity(), "Marca no mapa so o supermercado 5", Toast.LENGTH_LONG).show();
+                }
+                if (checkBox6.isChecked()) {
+                    Toast.makeText(getActivity(), "Marca no mapa so o supermercado 6", Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+
+        view.findViewById(R.id.supermarket_checkbox1).setOnClickListener(hListener);
+        view.findViewById(R.id.supermarket_checkbox2).setOnClickListener(hListener);
+        view.findViewById(R.id.supermarket_checkbox3).setOnClickListener(hListener);
+        view.findViewById(R.id.supermarket_checkbox4).setOnClickListener(hListener);
+        view.findViewById(R.id.supermarket_checkbox5).setOnClickListener(hListener);
+        view.findViewById(R.id.supermarket_checkbox6).setOnClickListener(hListener);
+
         return view;
     }
     @Override
