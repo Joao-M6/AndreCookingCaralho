@@ -23,19 +23,19 @@ public class HomeFragment extends Fragment {
                 switch (view.getId()) {
                     case R.id.button_home_cooking:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new FridgeFragment()).commit();
+                                new FridgeFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.button_home_shopping_list:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new ShoppingListFragment()).commit();
+                                new ShoppingListFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.button_home_meal_planning:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new MealPlanningFragment()).commit();
+                                new MealPlanningFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.button_home_sugestions:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new SugestionsFragment()).commit();
+                                new SugestionsFragment()).addToBackStack(null).commit();
                         break;
                 }
             }

@@ -27,23 +27,23 @@ public class SugestionsFragment extends Fragment {
                 switch (view.getId()) {
                     case R.id.button_sugestions_my_recipes:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new SugestionsMyRecipesFragment()).commit();
+                                new SugestionsMyRecipesFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.button_sugestions_friends_recipes:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new SugestionsFriendsFragment()).commit();
+                                new SugestionsFriendsFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.button_sugestions_popular_recipes:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new SugestionsPopularFragment()).commit();
+                                new SugestionsPopularFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.button_sugestions_tematic_recipes:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new SugestionsTematicFragment()).commit();
+                                new SugestionsTematicFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.button_sugestions_supermarkets:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new SugestionsSupermarketFragment()).commit();
+                                new SugestionsSupermarketFragment()).addToBackStack(null).commit();
                         break;
                 }
             }

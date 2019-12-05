@@ -23,7 +23,7 @@ public class FridgeFragment extends Fragment {
                 switch (view.getId()) {
                     case R.id.button_fridge_options_temp:
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new RecipeOptionsFragment()).commit();
+                                new RecipeOptionsFragment()).addToBackStack(null).commit();
                         break;
                 }
             }
